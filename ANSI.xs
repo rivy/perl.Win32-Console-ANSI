@@ -1,11 +1,12 @@
 #define PERL_NO_GET_CONTEXT     /* we want efficiency */
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
 
 #include "ppport.h"
 
-#include <windows.h>
 #include <ImageHlp.h>
 #include <tlhelp32.h>
 
@@ -1534,6 +1535,26 @@ _GetConsoleColors()
     EXTEND(SP, 2);
     PUSHs(sv_2mortal(newSViv(foreground)));
     PUSHs(sv_2mortal(newSViv(background)));
+
+# ---------------------------------------------------------
+#    _SetConsoleStandard()
+#  Set the "standard" size for buffer (80x300) and window (80x25)
+#  This function is for tests only.
+# ---------------------------------------------------------
+
+void
+_SetConsoleStandard()
+  PPCODE:
+    COORD  dwSize;
+    SMALL_RECT srctWindow;
+    dwSize.X = 80;
+    dwSize.Y = 300;
+    SetConsoleScreenBufferSize(hConOut, dwSize);
+    srctWindow.Top = 0;
+    srctWindow.Left = 0;
+    srctWindow.Right = 79;
+    srctWindow.Bottom = 24;
+    SetConsoleWindowInfo(hConOut, TRUE, &srctWindow);
 
 
 

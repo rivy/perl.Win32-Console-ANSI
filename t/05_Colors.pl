@@ -10,6 +10,8 @@ binmode STDOUT;
 select STDOUT;
 $|++;
 
+Win32::Console::ANSI::_SetConsoleStandard();
+
 my $npipe = new Win32::Pipe("\\\\.\\pipe\\ANSINamedPipe", 1) or die $^E;
 my $n;
 

@@ -1,5 +1,11 @@
 Revision history for Perl extension Win32::Console::ANSI
 
+1.09 2015/06/16
+  - changed the order of included file (RT#92382)
+    Thanks to J. Mash.
+  - Tests are now independent of the default settings of the user for CMD
+    (RT#105257 and RT#105260) Thanks to Ralf Neubauer.
+
 1.08 2014/01/13
   - added #define PERL_NO_GET_CONTEXT to XS code, for efficiency RT#92071
     Thanks to Daniel Dragan.
