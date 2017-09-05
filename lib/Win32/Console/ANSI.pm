@@ -2,7 +2,7 @@ package Win32::Console::ANSI;
 #
 # Copyright (c) 2004-2015 Jean-Louis Morel <jl_morel@bribes.org>
 #
-# Version 1.10 (6/09/2015)
+# Version 1.11 (9/04/2017)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
@@ -19,7 +19,7 @@ use warnings;
 require Exporter;
 
 our @ISA = qw(Exporter);
-our $VERSION = '1.10';
+our $VERSION = '1.11';
 
 use constant  MS_ON      => -1;
 use constant  MS_STANDBY => 1;

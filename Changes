@@ -1,5 +1,8 @@
 Revision history for Perl extension Win32::Console::ANSI
 
+1.11 2017/09/04
+  - added (bright foreground) \e[90m .. \e[m97 and (bright background) \e[100m .. \e[m107 sequences
+
 1.10 2015/09/06
   - added \e[39m and \e[49m esc sequences for resetting foreground and 
     background colors to default (RT#106872).
