@@ -2,7 +2,7 @@ package Win32::Console::ANSI;
 #
 # Copyright (c) 2004-2015 Jean-Louis Morel <jl_morel@bribes.org>
 #
-# Version 1.09 (16/06/2015)
+# Version 1.10 (6/09/2015)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
@@ -19,7 +19,7 @@ use warnings;
 require Exporter;
 
 our @ISA = qw(Exporter);
-our $VERSION = '1.09';
+our $VERSION = '1.10';
 
 use constant  MS_ON      => -1;
 use constant  MS_STANDBY => 1;
@@ -308,6 +308,8 @@ screen.
        35    Magenta
        36    Cyan
        37    White
+       
+       39    Default foreground color
 
 =item * Background colors
 
@@ -319,6 +321,8 @@ screen.
        45    Magenta
        46    Cyan
        47    White
+       
+       49    Default background color
 
 =back
 

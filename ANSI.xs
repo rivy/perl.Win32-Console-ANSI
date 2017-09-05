@@ -513,6 +513,14 @@ void InterpretEscSeq( )
             case 28 :
               concealed = 0;
               break;
+            case 39 :
+              foreground = foreground_default;
+              DEBUGSTR("resetting foreground to  = 0x%.8x", foreground);
+              break;
+            case 49 :
+              background = background_default;
+              DEBUGSTR("resetting background to  = 0x%.8x", background);
+              break;
           }
           if ( (30 <= es_argv[i]) && (es_argv[i] <= 37) ) {
             foreground = es_argv[i]-30;

@@ -1,5 +1,10 @@
 Revision history for Perl extension Win32::Console::ANSI
 
+1.10 2015/09/06
+  - added \e[39m and \e[49m esc sequences for resetting foreground and 
+    background colors to default (RT#106872).
+    Thanks to Harrie Huzen.
+
 1.09 2015/06/16
   - changed the order of included file (RT#92382)
     Thanks to J. Mash.

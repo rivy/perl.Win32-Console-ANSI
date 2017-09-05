@@ -54,7 +54,7 @@ sub comp {            # compare screendump MD5 digests
 }
 
 $npipe->Read();
-$npipe->Write("1..36\n");        # <== test plan
+$npipe->Write("1..37\n");        # <== test plan
 
 # ****************************** BEGIN TESTS
 
@@ -185,6 +185,24 @@ foreach my $i (0..15) {
   }
 }
 print "\e[m";
+$n++;
+$npipe->Read();
+$npipe->Write($r ? "ok $n\n":"not ok $n\n");
+
+# test 37
+
+Cls;
+$r = 1;
+my ($f0, $b0) = Win32::Console::ANSI::_GetConsoleColors();
+print "\e[33;45mGlop"; # change foreground & background color
+
+print "\e[39m";   # reset foreground color
+my ($f1, $b1) = Win32::Console::ANSI::_GetConsoleColors();
+$r = 0 if $f1 != $f0;
+print "\e[49m";   # reset background color
+($f1, $b1) = Win32::Console::ANSI::_GetConsoleColors();
+$r = 0 if $b1 != $b0;
+
 $n++;
 $npipe->Read();
 $npipe->Write($r ? "ok $n\n":"not ok $n\n");
