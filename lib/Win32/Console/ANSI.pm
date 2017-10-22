@@ -324,6 +324,28 @@ screen.
        
        49    Default background color
 
+=item * Bright / high-intensity foreground colors
+
+       90    Bright Black (aka Dark Gray)
+       91    Bright Red
+       92    Bright Green
+       93    Bright Yellow
+       94    Bright Blue
+       95    Bright Magenta
+       96    Bright Cyan
+       97    Bright White
+
+=item * Bright / high-intensity background colors
+
+      100    Bright Black (aka Dark Gray)
+      101    Bright Red
+      102    Bright Green
+      103    Bright Yellow
+      104    Bright Blue
+      105    Bright Magenta
+      106    Bright Cyan
+      107    Bright White
+
 =back
 
 \e[m is equivalent to \e[0m.
