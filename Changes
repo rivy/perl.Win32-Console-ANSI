@@ -1,5 +1,8 @@
 Revision history for Perl extension Win32::Console::ANSI
 
+1.12 2017/10/22
+  - fixed failing tests for larger console windows, see RT#118585
+
 1.11 2017/09/04
   - added (bright foreground) \e[90m .. \e[m97 and (bright background) \e[100m .. \e[m107 sequences
 
